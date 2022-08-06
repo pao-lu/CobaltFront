@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Main from "../page/Main.vue"
 import Contest from "@/page/Contest.vue"
 import Problem from "@/page/Problem.vue"
+import ProblemDetail from "@/page/ProblemDetail.vue"
 import Status from "@/page/Status.vue"
 
 const routes = [
@@ -18,7 +19,8 @@ const routes = [
     {
         path: '/p',
         name: '题目',
-        component: Problem
+        children: [{ path: '', name: '题目列表', component: Problem },
+        { path: ':id', name: "内容", component: ProblemDetail }],
     },
     {
         path: '/s',

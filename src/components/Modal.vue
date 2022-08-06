@@ -77,8 +77,10 @@ onUnmounted(() => {
     overflow-y: auto;
 }
 
-@screen-sm-min: 600px;
-@screen-md-min: 1024px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+@screen-xl-min: 1400px;
 
 .modal {
     margin: 0 auto;
@@ -100,7 +102,11 @@ onUnmounted(() => {
     }
 }
 
-.thin .modal {
+.thin>.modal {
     max-width: 350px;
+}
+
+.xl>.modal {
+    max-width: 900px;
 }
 </style>
