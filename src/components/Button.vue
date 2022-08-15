@@ -54,7 +54,7 @@ function ripple(event) {
 button {
     position: relative;
     display: inline-block;
-    height: 36px;
+    min-height: 36px;
     // line-height: 36px;
     padding: 0 1.5em;
     margin: 3px;

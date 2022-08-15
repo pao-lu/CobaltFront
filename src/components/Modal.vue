@@ -50,16 +50,16 @@ onUnmounted(() => {
 </script>
 <template>
     <div class="pop_layer">
-        <button href="javascript:void(0);" @focus="focus_input_ref" style="opacity: 0">
+        <button @focus="focus_input_ref" style="opacity: 0">
             弹出窗口
         </button>
-        <button href="javascript:void(0);" ref="inputRef" style="opacity: 0">
+        <button ref="inputRef" style="opacity: 0">
             弹出窗口
         </button>
         <div class="modal">
             <slot></slot>
         </div>
-        <button href="javascript:void(0);" @focus="focus_input_ref" style="opacity: 0">
+        <button @focus="focus_input_ref" style="opacity: 0">
             弹出窗口
         </button>
     </div>

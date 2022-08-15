@@ -13,14 +13,14 @@ const routes = [
     },
     {
         path: '/c',
-        name: '练习、比赛',
+        name: '比赛',
         component: Contest
     },
     {
         path: '/p',
         name: '题目',
         children: [{ path: '', name: '题目列表', component: Problem },
-        { path: ':id', name: "内容", component: ProblemDetail }],
+        { path: ':id', name: "题目详情", component: ProblemDetail }],
     },
     {
         path: '/s',
@@ -32,6 +32,13 @@ const routes = [
 const router = createRouter({
     routes,
     history: createWebHashHistory()
+})
+
+router.beforeEach((to, from, next) => {
+    if (to.name) {
+        document.title = to.name + ' - 在线评测系统';
+    }
+    next();
 })
 
 export default router;

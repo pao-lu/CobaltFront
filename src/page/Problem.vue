@@ -20,7 +20,7 @@ import "@/assets/ico.less"
             <Button class="small primary raised">查找</Button>
             <Button class="small primary raised"><i class="ico-label"></i>选择标签</Button>
             <hr />
-            <Table>
+            <Table class="strip">
                 <template v-slot:thead>
                     <tr>
                         <th style="width:1.5em;text-align: middle"></th>
@@ -35,16 +35,20 @@ import "@/assets/ico.less"
                 <template v-slot:tbody>
                     <tr v-for="i in 100">
                         <td data-label="结果" class="left mono">
-                            <span v-if="i%3 == 0" class=""></span>
-                            <span v-if="i%3 == 1" class="green"><i class="ico-ac"></i></span>
-                            <span v-if="i%3 == 2" class="red"><i class="ico-wa"></i></span>
+                            <span v-if="i % 3 == 0" class=""></span>
+                            <span v-if="i % 3 == 1" class="green"><i class="ico-ac"></i></span>
+                            <span v-if="i % 3 == 2" class="red"><i class="ico-wa"></i></span>
                         </td>
-                        <td data-label="编号" class="right">{{i}}</td>
-                        <td data-label="标题" class="left"><a href="javascript:void(0)">A+B</a></td>
-                        <td data-label="解决人数" class="right"><a href="javascript:void(0)">{{i}}</a></td>
+                        <td data-label="编号" class="right">{{ i }}</td>
+                        <td data-label="标题" class="left">
+                            <router-link :to="'/p/'+i" custom v-slot="{ href, route, navigate, isActive, isExactActive }">
+                                <a :href="href" @click="navigate">A+B</a></router-link>
+                        </td>
+                        <td data-label="解决人数" class="right"><a href="javascript:void(0)">{{ i }}</a></td>
                         <td data-label="提交人数" class="right"><a href="javascript:void(0)">100</a></td>
                         <td data-label="比例">
-                            <div class="inner" :style="{width: (Math.random()*100)+'%'}">{{Math.floor(i/100*100)}}.{{Math.floor(i/100*1000)%10}}%</div>
+                            <div class="inner" :style="{ width: (Math.random() * 100) + '%' }">
+                                {{ Math.floor(i / 100 * 100) }}.{{ Math.floor(i / 100 * 1000) % 10 }}%</div>
                         </td>
                     </tr>
                 </template>
@@ -90,12 +94,5 @@ table {
     // text-shadow: white 0 1px 1px,white 1px 0px 1px,white -1px 0 1px,white 0 -1px 1px;
     // font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-}
-
-tbody>tr:nth-child(2n+1) {
-    background: #f9f9f9;
-    &:hover {
-        background: #eee;
-    }
 }
 </style>

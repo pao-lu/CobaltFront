@@ -20,7 +20,8 @@ defineProps({
         <span v-if="i == 7" class="red"><i class="ico-mle"></i> 内存超限</span>
         <span v-if="i == 8" class="red"><i class="ico-tle"></i> 时间超限</span>
         <span v-if="i == 9" class="red"><i class="ico-ole"></i> 输出超限</span>
-        <span v-if="i == 10" class="purple"><i class="ico-wall"></i> 非法操作</span>
+        <span v-if="i == 10" class="red"><i class="ico-wall"></i> 非法操作</span>
+        <span v-if="i == 11" class="purple"><i class="ico-warn"></i> 系统错误</span>
 
         <!-- <span v-if="i == 0"><i class="ico-wait"></i> Waiting</span>
         <span v-if="i == 1" class="primary"><i class="ico-build"></i> Compiling</span>
@@ -32,7 +33,8 @@ defineProps({
         <span v-if="i == 7" class="red"><i class="ico-mle"></i> Memory Limit</span>
         <span v-if="i == 8" class="red"><i class="ico-tle"></i> Time Limit</span>
         <span v-if="i == 9" class="red"><i class="ico-ole"></i> Output Limit</span>
-        <span v-if="i == 10" class="purple"><i class="ico-wall"></i> Illegal Syscall</span> -->
+        <span v-if="i == 10" class="red"><i class="ico-wall"></i> Illegal Operation</span>
+        <span v-if="i == 10" class="purple"><i class="ico-warn"></i> System Error</span> -->
     </span>
 </template>
 

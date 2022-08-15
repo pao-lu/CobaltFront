@@ -12,7 +12,9 @@
 <style lang="less" scoped>
 table {
     border-collapse: collapse;
-    :deep(th), :deep(td){
+
+    :deep(th),
+    :deep(td) {
         padding: 0 3px;
     }
 
@@ -33,6 +35,16 @@ table {
 
     :deep(tr:hover) {
         background: #eee;
+    }
+
+    &.strip {
+        :deep(tbody>tr:nth-child(2n+1)) {
+            background: #f9f9f9;
+
+            &:hover {
+                background: #eee;
+            }
+        }
     }
 
     @media screen and (max-width: 600px) {

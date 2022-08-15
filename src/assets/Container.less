@@ -1,10 +1,12 @@
+@import "./sizes.less";
+
 .container {
     -webkit-box-sizing: border-box;
-    box-sizing        : border-box;
-    margin-right      : auto;
-    margin-left       : auto;
-    padding-left      : 15px;
-    padding-right     : 15px;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .container:before,
@@ -17,33 +19,29 @@
     clear: both;
 }
 
-@media (min-width: 544px) {
+@media (min-width: @sm-low) {
     .container {
-        max-width: 570px;
+        max-width: 99%;
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: @md-low) {
     .container {
-        max-width: 740px;
+        max-width: 98%;
+        min-width: @sm-low*0.98;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: @lg-low) {
     .container {
-        max-width: 960px;
+        max-width: 90%;
+        min-width: @lg-low*0.98;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: @xl-low) {
     .container {
-        max-width: 1170px;
-    }
-}
-
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1386px;
+        max-width: @xl-low*0.90;
     }
 }
 
